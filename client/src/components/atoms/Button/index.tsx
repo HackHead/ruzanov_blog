@@ -1,10 +1,11 @@
 import React, { Children, MouseEvent } from 'react';
 import clsx from 'clsx';
 import Spinner from '../Spinner';
+
 export type ButtonProps = {
-    variant: 'primary' | 'ghost' | 'success' | 'info' | 'warning' | 'danger' | 'black'
-    size?: 'small' | 'medium' | 'large'
-    loading?: boolean
+    variant: 'primary' | 'ghost' | 'success' | 'info' | 'warning' | 'danger' | 'black';
+    size?: 'small' | 'medium' | 'large';
+    loading?: boolean;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
 const Button = ({
@@ -16,7 +17,7 @@ const Button = ({
 }: ButtonProps) => {
     const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
         if (!loading && attributes.onClick) {
-            attributes.onClick(e)
+            attributes.onClick(e);
         }
     }
 
@@ -41,7 +42,7 @@ const Button = ({
         <button
             {...attributes}
             className={clsx(
-                "btn text-sm font-medium px-5 py-3 block",
+                'btn text-sm font-medium px-5 py-3 block',
                 variantClassname,
                 sizeClassname,
                 attributes.className
@@ -51,11 +52,11 @@ const Button = ({
             onClick={handleClick}
         >
             {loading ? (
-                <Spinner size={size} variant={"secondary"} />
+                <Spinner size={size} variant={'secondary'} />
             ) : (
                 Children.map(children, (child, i) => {
                     return (
-                        <span key={i} className="mr-xsmall last:mr-0">
+                        <span key={i} className='mr-xsmall last:mr-0'>
                             {child}
                         </span>
                     )
