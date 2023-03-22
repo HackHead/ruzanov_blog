@@ -7,6 +7,7 @@ import Home from './components/pages/home';
 import Blog from './components/pages/blog';
 import Communities from './components/pages/communities';
 import _404 from './components/pages/errors/404';
+import Subscribtions from './components/pages/subscriptions';
 function App() {
   
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/signup' element={<SignUp />} />
           <Route path='/blog' element={<Blog />} />
           <Route path='/communities' element={<Communities />} />
+          <Route path='/subscribtions' element={<Subscribtions />} />
           <Route path='*' element={<_404/>} />
         </Routes>
       </Router>
