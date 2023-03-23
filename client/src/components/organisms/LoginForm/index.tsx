@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../../atoms/Button";
 import Spinner from "../../atoms/Spinner";
 import TextField from "../../atoms/TextField";
@@ -23,7 +24,7 @@ const LoginForm = () => {
             <p className="text-center text-sm text-gray-500">
                 Нет аккаунта?
                 &nbsp;
-                <a className="underline hover:no-underline" href="">Зарегистрироваться</a>
+                <Link className="underline hover:no-underline" to="/signup">Зарегистрироваться</Link>
             </p>
         </form>
     );

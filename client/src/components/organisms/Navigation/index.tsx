@@ -51,7 +51,7 @@ const Navigation = () => {
                         width={35} 
                         height={35} 
                     /> <span className="text-sm inline-block" style={{height: '16px'}}>3</span></a>
-                <Button variant="black" className="text-white rounded-lg">Sign Up</Button>
+                <Link to='/signin' className="text-white bg-black rounded-lg btn text-sm font-medium px-5 py-3 block">Войти</Link>
             </nav>
             <div className='navbar-menu relative z-50 hidden'>
                 <div className='navbar-backdrop fixed inset-0 bg-gray-800 opacity-25'></div>

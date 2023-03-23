@@ -18,9 +18,8 @@ const TextField = ({
 
             <div className="relative">
                 <input
-                    type={attributes.type}
                     className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
-                    placeholder={attributes.placeholder}
+                    {...attributes}
                 />
 
                 <span
