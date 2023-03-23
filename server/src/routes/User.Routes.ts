@@ -1,5 +1,7 @@
 import { Router } from "express";
 import UserController from "../controllers/User.Controller.js";
+import isAuth from "../middleware/IsAuth.js";
+import User from "../models/User.js";
 
 const router = Router();
 
@@ -16,4 +18,8 @@ router.put('/users/:id', (req, res) => {
 router.delete('/users/:id', (req, res) => {
 });
 
+router.post('/users/login', UserController.login);
+router.post('/users/test', isAuth, (req, res) => {
+    res.json({message: 'Успешно'})
+});
 export default router;
