@@ -46,5 +46,7 @@ const User = sequelize.define('User', {
 }, {
   timestamps: true,
 });
-
+User.sync({ force: true })
+  .then(() => console.log('Таблица пользователей успешно создана'))
+  .catch((error) => console.log('Возникла ошибка:', error));
 export default User;
