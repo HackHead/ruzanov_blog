@@ -2,6 +2,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import UserRoutes from './routes/User.Routes.js';
 import config from './modules/config.js';
+import cors from 'cors';
+
 class App {
     private APP: express.Application;
     private PORT: number;
@@ -14,6 +16,7 @@ class App {
         this.SESSION_SECRET = config.SESSION_SECRET;
         this.APP = express();
         
+        this.setupCors();
         this.setupBodyParser();
         this.setupRoutes();
         this.boot();
@@ -27,7 +30,11 @@ class App {
     private setupRoutes(): void {
         this.APP.use('/api', UserRoutes)
     }
-    
+    private setupCors() {
+        this.APP.use(cors({
+            origin: '*'
+        }));
+    }
     private boot(): void {
         try {
             if (this.NODE_ENV === 'development') {
